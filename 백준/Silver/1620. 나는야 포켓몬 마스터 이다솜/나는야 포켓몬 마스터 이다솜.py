@@ -11,10 +11,9 @@ for _ in range(1,N+1):
     pokemon_dict2[name] = number_pokemon
     number_pokemon += 1
 
-answer = []
 for _ in range(M):
     pokemon = str(sys.stdin.readline()).strip()
-    try:
+    if pokemon.isdigit():
         print(pokemon_dict1[int(pokemon)])
-    except:
+    else:
         print(pokemon_dict2[pokemon])
