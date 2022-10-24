@@ -6,7 +6,7 @@ def solution(numbers):
     # print(com_lst)
     for i in com_lst:
         answer.append(i[0]+i[1])
-    answer.sort()
+    # answer.sort()
     print(answer)
     answer = list(set(answer))
     print(answer)
