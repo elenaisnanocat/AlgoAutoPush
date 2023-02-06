@@ -12,7 +12,7 @@ def solution(N, stages):
     
     for i in range(len(stage)):
         if stage[i] == 0:
-            failrate.append([i+1,0])
+            failrate.append([i+1,0]) #스테이지에 도달한 유저가 없는 경우 해당 스테이지의 실패율은 0 
         else:
             fail = stage[i] / (len(stages) - sum(stage[:i]))
             failrate.append([i+1,fail])
