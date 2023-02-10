@@ -1,26 +1,26 @@
 def deleteblock(m, n, board): #높이m r  폭n c
     
     #없앨 블록 체크
-    check_del = [[False]*n for _ in range(m)]
+    check_del = [[0]*n for _ in range(m)]
     # print(check_del)
     for r in range(m-1):
         for c in range(n-1):
             if board[r][c] == '':
                 continue
             elif board[r][c] == board[r+1][c] and board[r][c] == board[r][c+1] and board[r][c] == board[r+1][c+1]:
-                check_del[r][c] = True
-                check_del[r+1][c] = True
-                check_del[r][c+1] = True
-                check_del[r+1][c+1] = True
+                check_del[r][c] = 1
+                check_del[r+1][c] = 1
+                check_del[r][c+1] = 1
+                check_del[r+1][c+1] = 1
     # print(check_del)
     #체크한 배열보고 board에서 블록 터트리고('') 삭제될 개수 카운트
     deletecnt = 0
     for r in range(m):
         for c in range(n):
-            if check_del[r][c] == True:
+            if check_del[r][c] == 1:
                 board[r][c] = ''
                 deletecnt += 1
-                check_del[r][c] = False
+                check_del[r][c] = 0
     # print(check_del)
     # print(board)
     
